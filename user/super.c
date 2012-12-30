@@ -138,6 +138,10 @@ int make_tux3(struct sb *sb)
 		goto eek;
 	}
 
+	/* Set forcefully "reserved inums" as used inode numbers */
+	sb->super.usedinodes = cpu_to_be64(TUX_NORMAL_INO);
+	sb->freeinodes = MAX_INODES - TUX_NORMAL_INO;
+
 	change_end_atomic(sb);
 
 	if ((err = sync_super(sb)))

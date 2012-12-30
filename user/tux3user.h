@@ -57,6 +57,7 @@ struct file {
 								\
 	.iroot		= cpu_to_be64(pack_root(&no_root)),	\
 	.oroot		= cpu_to_be64(pack_root(&no_root)),	\
+	.usedinodes	= 0,					\
 	.nextalloc	= 0,					\
 	.atomdictsize	= 0,					\
 	.freeatom	= 0,					\
